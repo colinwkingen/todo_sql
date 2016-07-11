@@ -42,6 +42,15 @@ describe(List) do
     end
   end
 
+  describe("#timestamp") do
+    it("sets its timestamp when you save it") do
+      list = List.new({:name => "Epicodus stuff", :timestamp => "01/01/2001"})
+      list.save()
+      expect(list.timestamp()).to(eq("01/01/2001"))
+    end
+  end
+
+
   describe("#save") do
     it("lets you save the database") do
       list = List.new({:name => "Epicodus stuff"})
