@@ -17,19 +17,20 @@ describe(List) do
       expect(List.all()).to(eq([]))
     end
   end
-  describe(".order") do
-    it("it returns list items in order of id") do
-      list1 = List.new({:name => "Epicodus stuff"})
-      # list2 = List.new({:name => "Epicodus stuff"})
-      # list1.save()
-      # list2.save()
-      expect(list1).(eq(list1))
-    end
-  end
+
   describe("#name") do
     it("tells you its name") do
       list = List.new({:name => "Epicodus stuff"})
       expect(list.name()).to(eq("Epicodus stuff"))
+    end
+  end
+  describe(".order") do
+    it("it returns list items in order of id") do
+      list1 = List.new({:name => "List 1"})
+      list2 = List.new({:name => "List 2"})
+      list1.save()
+      list2.save()
+      expect(List.order()[0]).to(eq(list1))
     end
   end
 

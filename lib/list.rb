@@ -23,7 +23,7 @@ class List
   end
 
   define_singleton_method(:order) do
-    returned_lists = DB.exec("SELECT * FROM lists ORDER BY id;")
+    returned_lists = DB.exec("SELECT * FROM lists ORDER BY id ASC;")
     lists = []
     returned_lists.each() do |list|
       name = list.fetch("name")
